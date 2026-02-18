@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="css/teacher.css">
+</head>
+<body>
+
+<header>
+    <h2>Teacher Admin Dashboard</h2>
+    <button id="logoutBtn">Logout</button>
+</header>
+
+<div class="container">
+
+    <!-- 📊 Analytics Cards -->
+    <div class="stats">
+        <div class="card">
+            <h3>Total Exams</h3>
+            <p id="totalExams">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Students</h3>
+            <p id="totalStudents">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Exams</h3>
+            <p id="activeExams">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Average Score</h3>
+            <p id="avgScore">0%</p>
+        </div>
+    </div>
+
+    <!-- 📋 Exam Management Section -->
+    <h3>Exam Management</h3>
+
+    <table id="examTable">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Year</th>
+                <th>Semester</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Duration</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- 🧩 Action Cards Section -->
+    <h3 class="section-title">Actions</h3>
+
+<div class="actions">
+
+    <div class="action-card subjects" onclick="location.href='manage-subjects.html'">
+        <div class="icon">📚</div>
+        <h4>Manage Subjects</h4>
+        <p>Add, edit and organize subjects</p>
+    </div>
+
+    <div class="action-card exams" onclick="location.href='manage-exams.html'">
+        <div class="icon">📝</div>
+        <h4>Manage Exams & Questions</h4>
+        <p>Create exams and add questions</p>
+    </div>
+
+    <div class="action-card results" onclick="location.href='view-results.html'">
+        <div class="icon">📊</div>
+        <h4>View Student Results</h4>
+        <p>Analyze performance and export reports</p>
+    </div>
+
+    <div class="action-card logout" onclick="logout()">
+        <div class="icon">🚪</div>
+        <h4>Logout</h4>
+        <p>Exit teacher panel securely</p>
+    </div>
+
+</div>
+
+</div>
+
+<script type="module" src="js/teacher.js"></script>
+
+</body>
+</html>

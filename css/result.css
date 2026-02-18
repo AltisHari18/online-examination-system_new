@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top left, #1f1f3a, #0f0f1c);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background glow */
+body::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #6c5ce7;
+    filter: blur(150px);
+    top: -100px;
+    left: -100px;
+    opacity: 0.3;
+}
+
+/* Result Box */
+.result-box {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(25px);
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 380px;
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.result-box h2 {
+    margin-bottom: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Stats Styling */
+.result-box p {
+    margin: 12px 0;
+    font-size: 15px;
+}
+
+.result-box span {
+    font-weight: bold;
+}
+
+/* Highlight Colors */
+#correct {
+    color: #00ffae;
+}
+
+#wrong {
+    color: #ff4d6d;
+}
+
+#notAttempted {
+    color: #ffa502;
+}
+
+#percentage {
+    font-size: 18px;
+    color: #6c5ce7;
+}
+
+/* Button */
+button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #6c5ce7, #8e44ad);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 15px rgba(108,92,231,0.7);
+}

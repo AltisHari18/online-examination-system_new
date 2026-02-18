@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam</title>
+    <link rel="stylesheet" href="css/exam.css">
+</head>
+<body>
+
+    <div class="exam-container">
+
+        <div class="exam-header">
+            <div>
+                <h3 id="questionNumber">Question 1</h3>
+                <p id="timer">00:00</p>
+            </div>
+            <div>
+                Attempted: <span id="attempted">0</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p id="questionText"></p>
+
+            <div id="options"></div>
+        </div>
+
+        <div class="exam-controls">
+    <button id="submitBtn">Submit Exam</button>
+</div>
+
+
+    </div>
+
+    <script type="module" src="js/exam-engine.js"></script>
+
+</body>
+</html>

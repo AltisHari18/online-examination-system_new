@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Subjects</title>
+    <link rel="stylesheet" href="css/teacher.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h2>Manage Subjects</h2>
+        <button onclick="history.back()" class="back-btn">← Back</button>
+    </div>
+
+    <!-- Add Subject Card -->
+    <div class="card form-card">
+        <h3>Add New Subject</h3>
+
+        <input type="text" id="subjectName" placeholder="Subject Name">
+        <input type="number" id="year" placeholder="Year (1 / 2 / 3)">
+        <input type="number" id="semester" placeholder="Semester (1 / 2 / 3...)">
+
+        <button id="addSubjectBtn">Add Subject</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- Subject List -->
+    <div class="card table-card">
+        <h3>All Subjects</h3>
+
+        <table id="subjectTable">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script type="module" src="js/manage-subjects.js"></script>
+</body>
+</html>

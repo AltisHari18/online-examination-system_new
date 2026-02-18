@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Exams</title>
+    <link rel="stylesheet" href="css/teacher.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h2>Manage Exams & Questions</h2>
+        <button onclick="history.back()" class="back-btn">← Back</button>
+    </div>
+
+    <!-- Create Exam -->
+    <div class="card form-card">
+        <h3>Create New Exam</h3>
+
+        <select id="subject"></select>
+
+        <input type="number" id="year" placeholder="Year">
+        <input type="number" id="semester" placeholder="Semester">
+        <input type="datetime-local" id="startDate">
+        <input type="datetime-local" id="endDate">
+        <input type="number" id="duration" placeholder="Duration (minutes)">
+
+        <button id="createExamBtn">Create Exam</button>
+        <p id="examMsg"></p>
+    </div>
+    <!-- Exam List -->
+<div class="card table-card">
+    <h3>Existing Exams</h3>
+
+    <table id="examListTable">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Year</th>
+                <th>Semester</th>
+                <th>Duration</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+    <!-- Add Questions -->
+    <div class="card form-card">
+        <h3>Add Question</h3>
+
+        <select id="examSelect"></select>
+
+        <input type="text" id="question" placeholder="Question">
+        <input type="text" id="option1" placeholder="Option 1">
+        <input type="text" id="option2" placeholder="Option 2">
+        <input type="text" id="option3" placeholder="Option 3">
+        <input type="text" id="option4" placeholder="Option 4">
+        <input type="number" id="correct" placeholder="Correct Option (1-4)">
+
+        <button id="addQuestionBtn">Add Question</button>
+        <p id="questionMsg"></p>
+    </div>
+
+    <!-- Questions Table -->
+    <div class="card table-card">
+        <h3>Questions</h3>
+
+        <table id="questionTable">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Correct</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script type="module" src="js/manage-exams.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Examination System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Online Examination System</h1>
+
+        <div class="login-box">
+
+            <h2>Login</h2>
+
+            <label for="role">Login As:</label>
+            <select id="role">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="password" id="password" placeholder="Enter Password">
+
+            <button id="loginBtn">Login</button>
+<button id="registerBtn">Register</button>
+
+
+
+            <p id="message"></p>
+
+        </div>
+    </div>
+
+    <!-- Firebase Config -->
+    <script type="module" src="js/firebase-config.js"></script>
+
+    <!-- Auth Logic -->
+    <script type="module" src="js/auth.js"></script>
+
+</body>
+</html>

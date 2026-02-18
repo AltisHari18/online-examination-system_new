@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Exam</title>
+    <link rel="stylesheet" href="css/select-exam.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>Select Examination</h2>
+
+        <div class="form-box">
+
+            <label>Year</label>
+            <select id="year">
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+
+            <label>Semester</label>
+            <select id="semester">
+                <option value="">Select Semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+            </select>
+
+            <label>Subject</label>
+            <select id="subject">
+                <option value="">Select Subject</option>
+                <option value="CNS">CNS</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer Networks">Computer Networks</option>
+            </select>
+
+            <button id="checkExamBtn">Check Availability</button>
+
+            <p id="message"></p>
+
+        </div>
+
+        <div id="startSection" style="display:none;">
+            <button id="startExamBtn">Start Exam</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/select-exam.js"></script>
+
+</body>
+</html>
