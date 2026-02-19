@@ -1,45 +1,290 @@
+/* ===== GLOBAL ===== */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     height: 100vh;
-    color: white;
+    overflow: hidden;
+
+    /* 🔥 Reduce overlay darkness (more bg visible) */
+    background:
+        linear-gradient(to bottom, rgba(95, 44, 130, 0.15), rgba(44, 15, 74, 0.15)),
+        url("bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
-.container {
+/* ===== MOVING STARS ===== */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation: moveStars 80s linear infinite;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+@keyframes moveStars {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-600px, -600px);
+    }
+}
+
+/* ===== FLOATING MOUNTAINS ===== */
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 280px;
+    background: url("bg.png") no-repeat center bottom;
+    background-size: cover;
+    animation: floatMountains 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatMountains {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(15px);
+    }
+}
+
+/* ===== LOGIN CARD ===== */
+.login-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    width: 300px;
+    padding: 45px;
+    border-radius: 25px;
+
+    /* ULTRA TRANSPARENT */
+    background: rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+    color: white;
     text-align: center;
 }
 
-.login-box {
-    background: white;
-    color: black;
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+/* ===== PREMIUM GLOW BORDER ===== */
+.login-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 28px;
+
+    background-size: 300% 300%;
+    animation: glowBorder 6s linear infinite;
+    z-index: -1;
 }
 
-button {
+@keyframes glowBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===== TEXT ===== */
+.login-card h2 {
+    margin-bottom: 35px;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== FORM ===== */
+.form-group {
+    margin-bottom: 22px;
+}
+
+/* REMOVE manual widths */
+#email {
     width: 100%;
-    padding: 10px;
-    background: #2a5298;
+}
+#password{
+    width: 270px;
+}
+/* Unified input styling */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
     color: white;
-    border: none;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+/* Role color */
+#role {
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== PASSWORD GROUP ===== */
+.password-group {
+    position: relative;
+}
+
+.password-group input {
+    padding-right: 45px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
+    font-size: 18px;
+    color: white;
 }
 
-button:hover {
-    background: #1e3c72;
+/* ===== OPTIONS ===== */
+.options {
+    margin-bottom: 22px;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-#message {
-    margin-top: 10px;
-    color: red;
+/* ===== BUTTON ===== */
+#loginBtn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 35px;
+    border: none;
+    background: white;
+    color: #5f2c82;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#loginBtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== REGISTER ===== */
+.register-text {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.register-text span {
+    cursor: pointer;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 480px) {
+    .login-card {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+/* ===== CUSTOM ROLE DROPDOWN ===== */
+
+.custom-select {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.select-selected {
+    padding: 14px;
+    border-radius: 35px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    color: #00ffcc;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.select-selected:hover {
+    box-shadow: 0 0 12px rgba(0,255,204,0.6);
+}
+
+/* Options container */
+.select-options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: rgba(15,15,30,0.9);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeDropdown 0.3s ease forwards;
+}
+
+.select-options div {
+    padding: 5px;
+    transition: 0.3s;
+}
+#customRole{
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 35px;
+}
+.select-options div:hover {
+    background: rgba(0,255,204,0.15);
+    padding-left: 20px;
+}
+
+@keyframes fadeDropdown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
