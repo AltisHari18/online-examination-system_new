@@ -79,12 +79,3 @@ onAuthStateChanged(auth, (user) => {
         window.location.href = "index.html";
     }
 });
-
-// Logout
-
-
-document.getElementById("logoutBtn2").addEventListener("click", () => {
-    signOut(auth).then(() => {
-        window.location.href = "index.html";
-    });
-});
