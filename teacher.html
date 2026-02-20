@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Dashboard</title>
     <link rel="stylesheet" href="css/teacher.css">
 </head>
-<body>
 
-<header>
-    <h2>Teacher Admin Dashboard</h2>
-    <button id="logoutBtn">Logout</button>
-</header>
+<body>
 
 <div class="container">
 
-    <!-- 📊 Analytics Cards -->
+    <!-- HEADER -->
+    <header class="main-header">
+        <h2>Teacher Admin Dashboard</h2>
+        <button id="logoutBtn">Logout</button>
+    </header>
+
+    <!-- ANALYTICS SECTION -->
     <div class="stats">
+
         <div class="card">
             <h3>Total Exams</h3>
             <p id="totalExams">0</p>
@@ -34,56 +38,63 @@
             <h3>Average Score</h3>
             <p id="avgScore">0%</p>
         </div>
+
     </div>
 
-    <!-- 📋 Exam Management Section -->
-    <h3>Exam Management</h3>
+    <!-- EXAM MANAGEMENT -->
+    <div class="section">
+        <h3>Exam Management</h3>
 
-    <table id="examTable">
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Year</th>
-                <th>Semester</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Duration</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <!-- 🧩 Action Cards Section -->
-    <h3 class="section-title">Actions</h3>
-
-<div class="actions">
-
-    <div class="action-card subjects" onclick="location.href='manage-subjects.html'">
-        <div class="icon">📚</div>
-        <h4>Manage Subjects</h4>
-        <p>Add, edit and organize subjects</p>
+        <div class="table-wrapper">
+            <table id="examTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Year</th>
+                        <th>Semester</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Duration</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
-    <div class="action-card exams" onclick="location.href='manage-exams.html'">
-        <div class="icon">📝</div>
-        <h4>Manage Exams & Questions</h4>
-        <p>Create exams and add questions</p>
-    </div>
+    <!-- ACTIONS -->
+    <div class="section">
+        <h3 class="section-title">Actions</h3>
 
-    <div class="action-card results" onclick="location.href='view-results.html'">
-        <div class="icon">📊</div>
-        <h4>View Student Results</h4>
-        <p>Analyze performance and export reports</p>
-    </div>
+        <div class="actions">
 
-    <div class="action-card logout" onclick="logout()">
-        <div class="icon">🚪</div>
-        <h4>Logout</h4>
-        <p>Exit teacher panel securely</p>
-    </div>
+            <div class="action-card subjects" onclick="location.href='manage-subjects.html'">
+                <div class="icon">📚</div>
+                <h4>Manage Subjects</h4>
+                <p>Add, edit and organize subjects</p>
+            </div>
 
-</div>
+            <div class="action-card exams" onclick="location.href='manage-exams.html'">
+                <div class="icon">📝</div>
+                <h4>Manage Exams & Questions</h4>
+                <p>Create exams and add questions</p>
+            </div>
+
+            <div class="action-card results" onclick="location.href='view-results.html'">
+                <div class="icon">📊</div>
+                <h4>View Student Results</h4>
+                <p>Analyze performance and export reports</p>
+            </div>
+
+            <div class="action-card logout" id="logoutCard">
+                <div class="icon">🚪</div>
+                <h4>Logout</h4>
+                <p>Exit teacher panel securely</p>
+            </div>
+
+        </div>
+    </div>
 
 </div>
 

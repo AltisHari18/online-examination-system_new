@@ -1,19 +1,32 @@
-body {
+/* ===== GLOBAL RESET ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
     font-family: 'Segoe UI', sans-serif;
+    min-height: 100dvh;
     background: radial-gradient(circle at top left, #1f1f3a, #0f0f1c);
     color: white;
+    padding: 20px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
 }
 
 /* Background glow */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     width: 400px;
     height: 400px;
     background: #6c5ce7;
@@ -21,20 +34,26 @@ body::before {
     top: -100px;
     left: -100px;
     opacity: 0.3;
+    z-index: 0;
 }
 
-/* Result Box */
-.result-box {
+/* ===== CONTAINER ===== */
+.container {
+    width: 100%;
+    max-width: 600px;
     position: relative;
+    z-index: 1;
+}
+
+/* ===== RESULT BOX ===== */
+.result-box {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(25px);
-    padding: 50px 40px;
+    padding: 40px;
     border-radius: 20px;
     text-align: center;
-    width: 380px;
     border: 1px solid rgba(255,255,255,0.1);
     animation: fadeUp 1s ease forwards;
-    opacity: 0;
 }
 
 @keyframes fadeUp {
@@ -48,8 +67,8 @@ body::before {
     letter-spacing: 1px;
 }
 
-/* Stats Styling */
-.result-box p {
+/* ===== RESULT DETAILS ===== */
+.result-details p {
     margin: 12px 0;
     font-size: 15px;
 }
@@ -59,26 +78,25 @@ body::before {
 }
 
 /* Highlight Colors */
-#correct {
-    color: #00ffae;
-}
-
-#wrong {
-    color: #ff4d6d;
-}
-
-#notAttempted {
-    color: #ffa502;
-}
+#correct { color: #00ffae; }
+#wrong { color: #ff4d6d; }
+#notAttempted { color: #ffa502; }
 
 #percentage {
     font-size: 18px;
     color: #6c5ce7;
 }
 
-/* Button */
+/* ===== ACTION BUTTONS ===== */
+.result-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 button {
-    margin-top: 25px;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -89,6 +107,27 @@ button {
 }
 
 button:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(108,92,231,0.7);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    html { font-size: 14px; }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 13px; }
+
+    .result-box {
+        padding: 25px;
+    }
 }

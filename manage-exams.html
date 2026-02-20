@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Exams</title>
     <link rel="stylesheet" href="css/teacher.css">
 </head>
@@ -28,24 +29,26 @@
         <button id="createExamBtn">Create Exam</button>
         <p id="examMsg"></p>
     </div>
+
     <!-- Exam List -->
-<div class="card table-card">
-    <h3>Existing Exams</h3>
+    <div class="card table-card">
+        <h3>Existing Exams</h3>
 
-    <table id="examListTable">
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Year</th>
-                <th>Semester</th>
-                <th>Duration</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</div>
-
+        <div class="table-wrapper">
+            <table id="examListTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Year</th>
+                        <th>Semester</th>
+                        <th>Duration</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
 
     <!-- Add Questions -->
     <div class="card form-card">
@@ -68,20 +71,23 @@
     <div class="card table-card">
         <h3>Questions</h3>
 
-        <table id="questionTable">
-            <thead>
-                <tr>
-                    <th>Question</th>
-                    <th>Correct</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="table-wrapper">
+            <table id="questionTable">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Correct</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
 </div>
 
 <script type="module" src="js/manage-exams.js"></script>
+
 </body>
 </html>

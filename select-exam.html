@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Select Exam</title>
     <link rel="stylesheet" href="css/select-exam.css">
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container">
 
+    <div class="page-header">
         <h2>Select Examination</h2>
+    </div>
 
-        <div class="form-box">
+    <div class="form-box">
 
-            <label>Year</label>
-            <select id="year">
-                
-            </select>
-
-            <label>Semester</label>
-            <select id="semester">
-                
-            </select>
-
-            <label>Subject</label>
-            <select id="subject">
-                
-            </select>
-
-            <button id="checkExamBtn">Check Availability</button>
-
-            <p id="message"></p>
-
+        <div class="form-group">
+            <label for="year">Year</label>
+            <select id="year"></select>
         </div>
 
-        <div id="startSection" style="display:none;">
-            <button id="startExamBtn">Start Exam</button>
+        <div class="form-group">
+            <label for="semester">Semester</label>
+            <select id="semester"></select>
         </div>
+
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject"></select>
+        </div>
+
+        <button id="checkExamBtn">Check Availability</button>
+
+        <p id="message"></p>
 
     </div>
 
-    <script type="module" src="js/select-exam.js"></script>
+    <div id="startSection" class="start-section">
+        <button id="startExamBtn">Start Exam</button>
+    </div>
+
+</div>
+
+<script type="module" src="js/select-exam.js"></script>
 
 </body>
 </html>

@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Result</title>
     <link rel="stylesheet" href="css/result.css">
 </head>
+
 <body>
 
+<div class="container">
+
     <div class="result-box">
+
         <h2>Exam Result</h2>
 
-        <p>Total Questions: <span id="total"></span></p>
-        <p>Correct Answers: <span id="correct"></span></p>
-        <p>Wrong Answers: <span id="wrong"></span></p>
-        <p>Not Attempted: <span id="notAttempted"></span></p>
-        <p>Percentage: <span id="percentage"></span>%</p>
-        
-        <button onclick="location.href='student.html'">
-            Back to Dashboard
-        </button>
-        <button id="downloadBtn">Download Marksheet</button>
+        <div class="result-details">
+            <p>Total Questions: <span id="total"></span></p>
+            <p>Correct Answers: <span id="correct"></span></p>
+            <p>Wrong Answers: <span id="wrong"></span></p>
+            <p>Not Attempted: <span id="notAttempted"></span></p>
+            <p>Percentage: <span id="percentage"></span>%</p>
+        </div>
+
+        <div class="result-actions">
+            <button onclick="location.href='student.html'">
+                Back to Dashboard
+            </button>
+            <button id="downloadBtn">
+                Download Marksheet
+            </button>
+        </div>
 
     </div>
 
-    <script type="module" src="js/result-engine.js"></script>
+</div>
 
+<script type="module" src="js/result-engine.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>

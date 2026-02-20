@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Manage Subjects</title>
     <link rel="stylesheet" href="css/teacher.css">
@@ -14,7 +15,7 @@
         <button onclick="history.back()" class="back-btn">← Back</button>
     </div>
 
-    <!-- Add Subject Card -->
+    <!-- Add Subject -->
     <div class="card form-card">
         <h3>Add New Subject</h3>
 
@@ -30,21 +31,24 @@
     <div class="card table-card">
         <h3>All Subjects</h3>
 
-        <table id="subjectTable">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Year</th>
-                    <th>Semester</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="table-wrapper">
+            <table id="subjectTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Year</th>
+                        <th>Semester</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
 </div>
 
 <script type="module" src="js/manage-subjects.js"></script>
+
 </body>
 </html>

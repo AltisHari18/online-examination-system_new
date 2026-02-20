@@ -3,112 +3,122 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Examination System</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<div id="tsparticles"></div>
 
-<div class="background"></div>
-<div class="mountains"></div>
+    <!-- Background Effects -->
+    <div id="tsparticles"></div>
+    <div class="background"></div>
+    <div class="mountains"></div>
 
-<div class="login-card">
+    <!-- Wrapper for Centering -->
+    <div class="login-wrapper">
 
-    <h2>Login</h2>
+        <div class="login-card">
 
-    <div class="form-group">
-    <div class="custom-select" id="customRole">
-        <div class="select-selected">
-            🎓 Student
+            <h2>Login</h2>
+
+            <!-- Role Selection -->
+            <div class="form-group">
+                <div class="custom-select" id="customRole">
+                    <div class="select-selected">
+                        🎓 Student
+                    </div>
+
+                    <div class="select-options">
+                        <div data-value="student">🎓 Student</div>
+                        <div data-value="teacher">👨‍🏫 Teacher</div>
+                    </div>
+                </div>
+                <input type="hidden" id="role" value="student">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+
+            <!-- Password -->
+            <div class="form-group password-group">
+                <input type="password" id="password" placeholder="Password">
+                <span id="togglePassword">👁</span>
+            </div>
+
+            <!-- Options -->
+            <div class="options">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+
+            <!-- Login Button -->
+            <button id="loginBtn">Login</button>
+
+            <!-- Register -->
+            <p class="register-text">
+                Don’t have an account?
+                <span id="registerBtn">Register</span>
+            </p>
+
+            <p id="message"></p>
+
         </div>
-
-        <div class="select-options">
-            <div data-value="student">🎓 Student</div>
-            <div data-value="teacher">👨‍🏫 Teacher</div>
-        </div>
-    </div>
-    <input type="hidden" id="role" value="student">
-</div>
-
-    <div class="form-group">
-        <input type="email" id="email" placeholder="Email">
     </div>
 
-    <div class="form-group password-group">
-        <input type="password" id="password" placeholder="Password">
-        <span id="togglePassword">👁</span>
-    </div>
+    <!-- Firebase Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
 
-    <div class="options">
-        <label>
-            <input type="checkbox"> Remember me
-        </label>
-        
-    </div>
+    <!-- Toggle Password -->
+    <script>
+        document.getElementById("togglePassword").addEventListener("click", () => {
+            const pass = document.getElementById("password");
+            pass.type = pass.type === "password" ? "text" : "password";
+        });
+    </script>
 
-    <button id="loginBtn">Login</button>
+    <!-- Particles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script>
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: { value: 40 },
+                size: { value: 2 },
+                move: { speed: 1 },
+                opacity: { value: 0.5 }
+            }
+        });
+    </script>
 
-    <p class="register-text">
-        Don’t have an account?
-        <span id="registerBtn">Register</span>
-    </p>
+    <!-- Custom Dropdown -->
+    <script>
+        const customSelect = document.getElementById("customRole");
+        const selected = customSelect.querySelector(".select-selected");
+        const options = customSelect.querySelector(".select-options");
 
-    <p id="message"></p>
+        selected.addEventListener("click", () => {
+            options.style.display = options.style.display === "flex" ? "none" : "flex";
+        });
 
-</div>
+        options.querySelectorAll("div").forEach(option => {
+            option.addEventListener("click", () => {
+                selected.innerHTML = option.innerHTML;
+                document.getElementById("role").value = option.dataset.value;
+                options.style.display = "none";
+            });
+        });
 
-<!-- Firebase Scripts -->
-<script type="module" src="js/firebase-config.js"></script>
-<script type="module" src="js/auth.js"></script>
+        document.addEventListener("click", (e) => {
+            if (!customSelect.contains(e.target)) {
+                options.style.display = "none";
+            }
+        });
+    </script>
 
-<script>
-document.getElementById("togglePassword").addEventListener("click", () => {
-    const pass = document.getElementById("password");
-    pass.type = pass.type === "password" ? "text" : "password";
-});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-<script>
-tsParticles.load("tsparticles", {
-  particles: {
-    number: { value: 40 },
-    size: { value: 2 },
-    move: { speed: 1 },
-    opacity: { value: 0.5 }
-  }
-});
-</script>
-<script>
-const customSelect = document.getElementById("customRole");
-const selected = customSelect.querySelector(".select-selected");
-const options = customSelect.querySelector(".select-options");
-
-selected.addEventListener("click", () => {
-    options.style.display = options.style.display === "flex" ? "none" : "flex";
-});
-
-options.querySelectorAll("div").forEach(option => {
-    option.addEventListener("click", () => {
-
-        // Change visible selected text
-        selected.innerHTML = option.innerHTML;
-
-        // 🔥 IMPORTANT: update hidden role input
-        document.getElementById("role").value = option.dataset.value;
-
-        // Close dropdown
-        options.style.display = "none";
-    });
-});
-
-document.addEventListener("click", (e) => {
-    if (!customSelect.contains(e.target)) {
-        options.style.display = "none";
-    }
-});
-</script>
 </body>
-
 
 </html>

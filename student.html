@@ -1,75 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="css/student.css">
 </head>
+
 <body>
+
     <div class="bg-animation">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-
-    <header>
-        <h2>Online Examination System</h2>
-        <button id="logoutBtn">Logout</button>
-    </header>
-
-    <div class="welcome">
-        <h3 id="welcomeText">Welcome, Student 👋</h3>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-    <div class="dashboard">
+    <div class="container">
 
-        <div class="card">
-            <h3>📝 Start Exam</h3>
-            <p>Attend available online exams</p>
-            <button onclick="location.href='select-exam.html'">Open</button>
+        <!-- HEADER -->
+        <header class="main-header">
+            <h2>Online Examination System</h2>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <!-- WELCOME -->
+        <div class="welcome">
+            <h3 id="welcomeText">Welcome, Student 👋</h3>
         </div>
 
-        <div class="card">
-            <h3>📊 View Results</h3>
-            <p>Check your exam performance</p>
-            <button onclick="location.href='result.html'">Open</button>
+        <!-- DASHBOARD CARDS -->
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>📝 Start Exam</h3>
+                <p>Attend available online exams</p>
+                <button onclick="location.href='select-exam.html'">Open</button>
+            </div>
+
+            <div class="card">
+                <h3>📊 View Results</h3>
+                <p>Check your exam performance</p>
+                <button onclick="location.href='result.html'">Open</button>
+            </div>
+
+            <div class="card">
+                <h3>👤 Profile</h3>
+                <p>View your academic information</p>
+                <button>Open</button>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>👤 Profile</h3>
-            <p>View your academic information</p>
-            <button>Open</button>
-        </div>
-
-        
+        <!-- RESULTS SECTION -->
         <div class="results-section">
-    <h3>Your Previous Results</h3>
 
-    <table id="resultsTable">
-        <thead>
-            <tr>
-                <th>Exam</th>
-                <th>Total</th>
-                <th>Correct</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <div class="chart-section">
-    <h3>Performance Chart</h3>
-    <canvas id="performanceChart"></canvas>
-</div>
+            <h3>Your Previous Results</h3>
 
-</div>
+            <div class="table-wrapper">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Exam</th>
+                            <th>Total</th>
+                            <th>Correct</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
 
+            <div class="chart-section">
+                <h3>Performance Chart</h3>
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+        </div>
 
     </div>
 
     <script type="module" src="js/student.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
+
 </html>
